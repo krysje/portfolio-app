@@ -1,5 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, ViewChild, ElementRef, Renderer2, OnInit, HostListener } from '@angular/core';
+import * as AOS from 'aos';
 
 
 @Component({
@@ -28,6 +29,13 @@ export class AppComponent implements OnInit {
   constructor(private renderer: Renderer2, 
     private elementRef: ElementRef) {}
 
+  async ngOnInit() {
+    AOS.init();
+    await this.delay(1000);
+    setInterval(() => this.displayGreetingsWithDelay(), 400);
+    setTimeout(() => this.loader = false, 4000);
+  }
+
   ngAfterViewInit() {
     this.renderer.listen(this.contentElement.nativeElement, 'scroll', (event) => {
       this.scrollYPosition = event.target.scrollTop;
@@ -46,11 +54,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  async ngOnInit() {
-    await this.delay(1000);
-    setInterval(() => this.displayGreetingsWithDelay(), 400);
-    setTimeout(() => this.loader = false, 4000);
-  }
+ 
 
   delay(ms: number) {
     return new Promise<void>(resolve => {
@@ -67,15 +71,19 @@ export class AppComponent implements OnInit {
 
   toIntro(){
     document.getElementById("intro")?.scrollIntoView({behavior:'smooth'});
+    this.closeSideMenu();
   }
   toResume(){
     document.getElementById("resume")?.scrollIntoView({behavior:'smooth'});
+    this.closeSideMenu();
   }
   toContact(){
     document.getElementById("contact")?.scrollIntoView({behavior:'smooth'});
+    this.closeSideMenu();
   }
   openInNewTab(){
       window.open('assets/downloads/Aman_Bansiwal_Resume_082023.pdf', '_blank');
+      this.closeSideMenu();
   }
 
   showSideMenu(){

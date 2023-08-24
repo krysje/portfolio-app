@@ -1,46 +1,44 @@
 @media (min-width: 600px) and (max-width: 768px) {
-  #intro-row1{
+  #intro-row1 {
     height: 75vh !important;
-    #intro-para{
+    #intro-para {
       padding: 1em 2em;
     }
-    #intro-image{
+    #intro-image {
       height: 23vh !important;
       padding-top: 1em;
-      img{
+      img {
         height: 100% !important;
       }
     }
   }
-  #res-row1{
+  #res-row1 {
     height: 75vh !important;
-    #resume-file{
+    #resume-file {
       display: flex;
       justify-content: center;
       padding: 1em 0.75em;
-      .res-hover{
+      .res-hover {
         width: fit-content;
-        .image-outline{
+        .image-outline {
           height: 20vh;
-          img{
+          img {
             height: inherit;
           }
         }
       }
     }
-    #resume-intro{
+    #resume-intro {
       padding: 1em 2em;
     }
   }
 }
 
 @media (min-width: 600px) and (max-width: 992px) {
-  #intro-para {
-    font-size: medium !important;
-  }
-  #resume-intro {
-    font-size: medium !important;
-  }
+  // #intro-para {
+  //   font-size: medium !important;
+  // }
+
   .name-running {
     span {
       font-size: 9em !important;
@@ -112,20 +110,22 @@
       font-size: 9em !important;
     }
   }
+
   #intro-row1 {
     height: 75vh !important;
   }
   #res-row1 {
     height: 75vh !important;
   }
-  .section-intro {
-    background-size: 40% !important;
+
+  #intro {
+    background-image: url("../assets/symbol-scatter-haikei-mob.svg");
   }
+
   .row {
     padding: 1em !important;
   }
   #intro-para {
-    font-size: 0.8em !important;
     padding: 1em;
   }
   #intro-image {
@@ -138,16 +138,13 @@
   #intro-tag {
     height: 30vh;
     align-items: center;
-    p {
-      font-size: medium !important;
-    }
   }
-  #resume-intro {
-    font-size: 0.8em !important;
+
+
+  #resume {
+    background-image: url("../assets/layered-waves-haikei-mob.svg");
   }
-  .section-resume {
-    background-size: 40% !important;
-  }
+
   #resume-file {
     padding: 2em 0;
     height: 30vh;
@@ -178,13 +175,10 @@
   #res-tag {
     height: 30vh;
     align-items: center;
-    p {
-      font-size: medium !important;
-    }
   }
-  .pill-btn{
+  .pill-btn {
     width: 80%;
-    font-size: smaller !important;
+    font-size: 0.7em !important;
   }
 }
 
@@ -421,11 +415,11 @@
   .section-intro {
     height: 100vh;
     width: 100%;
-    background: #1c1d20;
-    background-image: url("../assets/undraw_making_art_re_ee8w.svg");
+   // background: #1c1d20;
+    background-image: url("../assets/symbol-scatter-haikei.svg");
     background-position-x: left;
     background-position-y: bottom;
-    background-size: 25%;
+    background-size: cover;
     background-repeat: no-repeat;
     .container {
       .row {
@@ -434,8 +428,9 @@
         padding: 2em;
         height: 60vh;
         #intro-para {
-          color: bisque;
-          font-size: larger;
+          color: white;
+          text-shadow: 0px 0px black;
+          font-size: clamp(9px, 1vw + 1vh, 20px);
           padding: 2em;
           height: fit-content;
         }
@@ -460,8 +455,9 @@
         #intro-tag {
           text-align: center;
           color: #ff7150;
+          font-weight: 600;
           p {
-            font-size: x-large;
+            font-size: clamp(12px, 1.5vw + 2vh, 24px);
           }
         }
       }
@@ -470,11 +466,11 @@
   .section-resume {
     height: 100vh;
     width: 100%;
-    background-image: url("../assets/undraw_education_f8ru.svg");
+    background-image: url("../assets/layered-waves-haikei2.svg");
     background-position-x: right;
     background-position-y: bottom;
     background-repeat: no-repeat;
-    background-size: 25%;
+    background-size: cover;
     .container {
       .row {
         display: flex;
@@ -515,8 +511,9 @@
           }
         }
         #resume-intro {
-          color: azure;
-          font-size: larger;
+          color: bisque;
+          text-shadow: 0px 0px black;
+          font-size: clamp(9px, 1vw + 1vh, 20px);
           display: flex;
           align-items: center;
           height: fit-content;
@@ -529,8 +526,9 @@
         #res-tag {
           text-align: center;
           color: #ff7150;
+          font-weight: 600;
           p {
-            font-size: x-large;
+            font-size: clamp(12px, 1.5vw + 2vh, 24px);
           }
         }
       }
@@ -541,17 +539,20 @@
     height: 100%;
     width: 100%;
     background: #1c1d20;
-    background-image: url("../assets/undraw_people_search_re_5rre.svg");
+    background-image: url("../assets/polygon-scatter-haikei.svg");
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: bottom;
-    background-size: 20%;
-    .container {
-      height: 100%;
+    background-size: cover;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    padding: 2em;
+    justify-content: space-between;
+    .container {
+      height: auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 2em;
       .conc-row1 {
         display: flex;
         width: 100%;
@@ -561,39 +562,50 @@
           display: flex;
           width: 100%;
           justify-content: center;
-          color: bisque;
+          color: #ff7150;
+          font-weight: 700;
           font-size: calc(clamp(3em, 6vw, 6em) * 0.75);
         }
       }
-      .conc-row2{
+      .conc-row2 {
         width: 80%;
         color: bisque;
       }
-      .flex-col{
+      .flex-col {
         margin-top: 2em;
         text-align: center;
-      .pill-btn{
-        display: inline-block;
-        box-sizing: border-box;
-        height: 4.5em;
-        line-height: 4.2em;
-        background: bisque;
-        padding: 0px 2em;
-        border-radius: 999em;
-        text-decoration: none;
-        color: black;
-        font-size: 1em;
-        white-space: nowrap;
-        border: 3px solid bisque;
-        margin: 0.5em;
-        font-weight: 600;
-        transition: all 0.2s ease-in-out;
-      }
-      .pill-btn:hover{
-        background: #ff7150;
-        border: 3px solid #ff7150;
+        .pill-btn {
+          display: inline-block;
+          box-sizing: border-box;
+          height: 4.5em;
+          line-height: 4.2em;
+          background: bisque;
+          padding: 0px 2em;
+          border-radius: 999em;
+          text-decoration: none;
+          color: black;
+          font-size: 1em;
+          white-space: nowrap;
+          border: 3px solid bisque;
+          margin: 0.5em;
+          font-weight: 600;
+          transition: all 0.2s ease-in-out;
+        }
+        .pill-btn:hover {
+          background: #ff7150;
+          border: 3px solid #ff7150;
+        }
       }
     }
+    footer{
+      background-color: #001220;
+      height: 7vh;
+      a{
+        color: whitesmoke;
+      }
+      span{
+        color: whitesmoke;
+      }
     }
   }
 }
