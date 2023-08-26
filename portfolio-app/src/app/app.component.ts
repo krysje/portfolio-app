@@ -1,6 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, ViewChild, ElementRef, Renderer2, OnInit, HostListener } from '@angular/core';
-import * as AOS from 'aos';
 
 
 @Component({
@@ -19,6 +18,7 @@ export class AppComponent implements OnInit {
   isNavbarVisible = true;
   isMenuBarVisible = false;
 
+
   scrollYPosition: number = 0;
 
   @ViewChild('navbarContent', { static: false })
@@ -29,13 +29,6 @@ export class AppComponent implements OnInit {
   constructor(private renderer: Renderer2, 
     private elementRef: ElementRef) {}
 
-  async ngOnInit() {
-    AOS.init();
-    await this.delay(1000);
-    setInterval(() => this.displayGreetingsWithDelay(), 400);
-    setTimeout(() => this.loader = false, 4000);
-  }
-
   ngAfterViewInit() {
     this.renderer.listen(this.contentElement.nativeElement, 'scroll', (event) => {
       this.scrollYPosition = event.target.scrollTop;
@@ -44,9 +37,15 @@ export class AppComponent implements OnInit {
     });
   }
 
+  async ngOnInit() {
+    await this.delay(1000);
+    setInterval(() => this.displayGreetingsWithDelay(), 400);
+    setTimeout(() => this.loader = false, 4000);
+  }
 
   toggleNavbar() {
     const contentElement = this.navbarContent.nativeElement;
+
     if (contentElement.classList.contains('show')) {
       this.renderer.removeClass(contentElement, 'show');
     } else {

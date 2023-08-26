@@ -201,7 +201,7 @@
   background-color: #27374d;
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
   .loader {
     display: flex;
     align-items: center;
@@ -612,4 +612,13 @@
 
 section {
   scroll-snap-align: start;
+}
+
+.hidden{
+  opacity: 0;
+  transition: all 1s;
+}
+
+.show{
+  opacity: 1;
 }
