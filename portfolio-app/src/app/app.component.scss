@@ -201,7 +201,7 @@
   background-color: #27374d;
   height: 100vh;
   overflow-y: scroll;
-  // scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
   .loader {
     display: flex;
     align-items: center;
@@ -251,13 +251,16 @@
       }
       a {
         color: bisque;
+        transition: all 0.3s ease-in-out;
       }
       button:hover {
         scale: 1.1;
         background: #ffc107;
       }
       .nav-link:hover {
-        color: #ff7150;
+        color: whitesmoke;
+        background: #ff7150;
+        border-radius: 1em;
       }
     }
 
@@ -292,7 +295,7 @@
       cursor: pointer;
     }
     .nav-link:hover {
-      color: #ff7150;
+      color: #ff7150; 
     }
 
     .side-menu {
@@ -614,11 +617,43 @@ section {
   scroll-snap-align: start;
 }
 
-.hidden{
+.hidden-fd {
   opacity: 0;
-  transition: all 1s;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.show{
+.fade.show {
   opacity: 1;
+}
+
+.hidden-su {
+  opacity: 0;
+  transform: translateY(10em);
+  filter: blur(5px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-up.show {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.hidden-si {
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.scale-in.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+
+.pill-btn:nth-child(2){
+  transition-delay: 200ms;
+}
+.pill-btn:nth-child(3){
+  transition-delay: 400ms;
 }

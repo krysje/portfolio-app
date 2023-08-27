@@ -1,5 +1,5 @@
 <div #content class="content">
-  <div class="loader" *ngIf="loader">
+  <div *ngIf="showLoader" [@fadeOut] class="loader">
     <p id="greeting">{{ greeting }}</p>
   </div>
 
@@ -84,8 +84,8 @@
 
   <section class="section-intro" id="intro">
     <div class="container">
-      <div appIntersectionObserver class="hidden row" id="intro-row1">
-        <div class="col-lg-9 col-md-8" id="intro-para">
+      <div class="row" id="intro-row1">
+        <div [appIntersectionObserver]="'slide-up'" class="hidden-su col-lg-9 col-md-8" id="intro-para">
           <p>
             "Welcome to my digital portfolio – a curated collection of my
             journey in the world of software engineering and development. I am
@@ -99,7 +99,7 @@
             boundless possibilities of software engineering."
           </p>
         </div>
-        <div class="col-lg-3 col-md-4" id="intro-image">
+        <div [appIntersectionObserver]="'scale-in'" class="hidden-si col-lg-3 col-md-4" id="intro-image">
           <img
             src="../assets/intro.jpg"
             class="rounded-circle img-fluid"
@@ -107,7 +107,7 @@
           />
         </div>
       </div>
-      <div appIntersectionObserver class="hidden row" id="intro-row2">
+      <div [appIntersectionObserver]="'scale-in'" class="hidden-si row" id="intro-row2">
         <div class="col-lg-12" id="intro-tag">
           <p>
             "Turning Code into Creativity: Exploring the Artistry of Software
@@ -120,7 +120,7 @@
 
   <section class="section-resume" id="resume">
     <div class="container">
-      <div appIntersectionObserver class="hidden row" id="res-row1">
+      <div [appIntersectionObserver]="'scale-in'" class="hidden-si row" id="res-row1">
         <div class="col-lg-3 col-md-4" id="resume-file">
           <div class="res-hover" (click)="openInNewTab()">
             <div class="image-outline">
@@ -129,7 +129,7 @@
             <span> View Resume !! </span>
           </div>
         </div>
-        <div class="col-lg-9 col-md-8" id="resume-intro">
+        <div [appIntersectionObserver]="'slide-up'" class="hidden-su col-lg-9 col-md-8" id="resume-intro">
           <p>
             Welcome to the resume section, where you can access a comprehensive
             snapshot of my professional journey. This document outlines my
@@ -143,7 +143,7 @@
           </p>
         </div>
       </div>
-      <div appIntersectionObserver class="hidden row" id="res-row2">
+      <div [appIntersectionObserver]="'scale-in'" class="hidden-si row" id="res-row2">
         <div class="col-lg-12" id="res-tag">
           <p>"Unlocking My Journey: Explore My Professional Resume"</p>
         </div>
@@ -154,7 +154,7 @@
   <section class="section-contact" id="contact">
     <div class="container">
       <div class="conc-row1">
-        <div class="col-lg-10" id="contact-intro">
+        <div [appIntersectionObserver]="'scale-in'" class="hidden-si col-lg-10" id="contact-intro">
           <p>Let's work together</p>
           <div class="col-lg-2"></div>
         </div>
@@ -165,7 +165,7 @@
           </div>
         </div>
         <div class="conc-row3">
-          <div class="flex-col">
+          <div [appIntersectionObserver]="'fade'" class="hidden-fd flex-col">
             <a href="mailto:aman.bansiwal@gmail.com" class="pill-btn">aman.bansiwal@gmail.com</a>
             <a href="tel:+91-9414944929" class="pill-btn">+91-9414944929</a>
             <a href="https://www.linkedin.com/in/aman-bansiwal/" class="pill-btn">lnkd.in/aman-bansiwal</a>

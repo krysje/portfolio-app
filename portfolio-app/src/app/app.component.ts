@@ -1,4 +1,4 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, ViewChild, ElementRef, Renderer2, OnInit, HostListener } from '@angular/core';
 
 
@@ -6,18 +6,25 @@ import { Component, ViewChild, ElementRef, Renderer2, OnInit, HostListener } fro
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fadeOut', [
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('0.5s ease-in-out', style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 
 
 export class AppComponent implements OnInit {
   title = 'portfolio-app';
-  loader = false;
+  showLoader = true;
   greetingsList: string[] = ['olá', 'Guten Tag', 'Bonjour', 'こんにちは', '您好', '안녕하세요', 'Ciao', 'स्वागत है'];
   currentIndex = 0;
   greeting = 'Hello';
   isNavbarVisible = true;
   isMenuBarVisible = false;
-
 
   scrollYPosition: number = 0;
 
@@ -40,8 +47,9 @@ export class AppComponent implements OnInit {
   async ngOnInit() {
     await this.delay(1000);
     setInterval(() => this.displayGreetingsWithDelay(), 400);
-    setTimeout(() => this.loader = false, 4000);
+    setTimeout(() => this.showLoader = false, 4000);
   }
+
 
   toggleNavbar() {
     const contentElement = this.navbarContent.nativeElement;
@@ -96,6 +104,6 @@ export class AppComponent implements OnInit {
   }
 
   closeSideMenu(){
-    document.getElementById('side-menu')?.classList.toggle("active");
+    document.getElementById('side-menu')?.classList.remove("active");
   }
 }
