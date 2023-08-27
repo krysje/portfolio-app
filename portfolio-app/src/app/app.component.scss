@@ -140,7 +140,6 @@
     align-items: center;
   }
 
-
   #resume {
     background-image: url("../assets/layered-waves-haikei-mob.svg");
   }
@@ -295,7 +294,7 @@
       cursor: pointer;
     }
     .nav-link:hover {
-      color: #ff7150; 
+      color: #ff7150;
     }
 
     .side-menu {
@@ -418,7 +417,7 @@
   .section-intro {
     height: 100vh;
     width: 100%;
-   // background: #1c1d20;
+    // background: #1c1d20;
     background-image: url("../assets/symbol-scatter-haikei.svg");
     background-position-x: left;
     background-position-y: bottom;
@@ -600,13 +599,13 @@
         }
       }
     }
-    footer{
+    footer {
       background-color: #001220;
       height: 7vh;
-      a{
+      a {
         color: whitesmoke;
       }
-      span{
+      span {
         color: whitesmoke;
       }
     }
@@ -650,10 +649,9 @@ section {
   opacity: 1;
 }
 
-
-.pill-btn:nth-child(2){
+.pill-btn:nth-child(2) {
   transition-delay: 200ms;
 }
-.pill-btn:nth-child(3){
+.pill-btn:nth-child(3) {
   transition-delay: 400ms;
 }
