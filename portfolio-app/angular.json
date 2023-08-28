@@ -104,10 +104,10 @@
         "gh-pages": {
           "builder": "@angular-devkit/build-angular:deploy",
           "options": {
-            "baseHref": "/portfolio-aman",
+            "baseHref": "/portfolio-app",
             "outputPath": "dist/portfolio-app",
             "index": "src/index.html",
-            "deployUrl": "/portfolio-aman"
+            "deployUrl": "/portfolio-app"
           }
         }
       }
