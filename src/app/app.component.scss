@@ -66,6 +66,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  section{
+    height: 93vh !important;
+  }
   .navbar {
     padding: 1em !important;
     .navbar-brand {
@@ -81,6 +84,9 @@
   }
   .side-menu {
     width: 100% !important;
+  }
+  .center-page{
+    height: 71vh !important;
   }
   .job {
     margin: auto 0% 1em auto !important;
@@ -112,10 +118,10 @@
   }
 
   #intro-row1 {
-    height: 75vh !important;
+    height: 68vh !important;
   }
   #res-row1 {
-    height: 75vh !important;
+    height: 68vh !important;
   }
 
   #intro {
