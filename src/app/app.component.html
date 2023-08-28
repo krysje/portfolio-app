@@ -35,12 +35,12 @@
     </nav>
 
     <div class="menu" *ngIf="isMenuBarVisible" (click)="showSideMenu()">
-      <img src="../assets/menu.png" alt="menu-icon">
+      <img src="./assets/menu.png" alt="menu-icon">
     </div>
 
     <div class="side-menu" id="side-menu">
       <div class="close-icon">
-        <img src="../assets/close.png" alt="close-icon" (click)="closeSideMenu()">
+        <img src="./assets/close.png" alt="close-icon" (click)="closeSideMenu()">
       </div>
       <ul>
         <li class="nav-item active">
@@ -101,7 +101,7 @@
         </div>
         <div [appIntersectionObserver]="'scale-in'" class="hidden-si col-lg-3 col-md-4" id="intro-image">
           <img
-            src="../assets/intro.jpg"
+            src="./assets/intro.jpg"
             class="rounded-circle img-fluid"
             id="intro-image-attach"
           />
@@ -124,7 +124,7 @@
         <div class="col-lg-3 col-md-4" id="resume-file">
           <div class="res-hover" (click)="openInNewTab()">
             <div class="image-outline">
-              <img src="../assets/resume.png" class="img-fluid" id="res-img" />
+              <img src="./assets/resume.png" class="img-fluid" id="res-img" />
             </div>
             <span> View Resume !! </span>
           </div>
