@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/portfolio-app",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -26,7 +26,6 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
@@ -34,8 +33,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",  
-              "node_modules/popper.js/dist/umd/popper.min.js",  
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
@@ -94,13 +93,21 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "gh-pages": {
+          "builder": "@angular-devkit/build-angular:deploy",
+          "options": {
+            "baseHref": "/portfolio-aman",
+            "outputPath": "dist/portfolio-app",
+            "index": "src/index.html",
+            "deployUrl": "/portfolio-aman"
           }
         }
       }

@@ -213,7 +213,7 @@
     z-index: 2;
     p {
       font-family: "Bricolage Grotesque", sans-serif;
-      font-size: 4rem;
+      font-size: calc(clamp(3em, 6vw, 6em) * 0.75);
       color: bisque;
     }
   }
