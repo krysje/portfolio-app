@@ -1,0 +1,183 @@
+<div #content class="content">
+  <div *ngIf="showLoader" [@fadeOut] class="loader">
+    <p id="greeting">{{ greeting }}</p>
+  </div>
+
+  <section class="section-hero" id="section-hero">
+    <nav class="navbar navbar-expand-lg" [class.hidden]="!isNavbarVisible">
+      <a class="navbar-brand" href="#">@AmanBansiwal</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        (click)="toggleNavbar()"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon" (click)="showSideIconAndMenu()"></span>
+      </button>
+      <div
+        collapse navbar-collapse
+        style="margin-left: auto;"
+        id="navbarContent"
+        #navbarContent
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" (click)="toIntro()">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toResume()">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="toContact()">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="menu" *ngIf="isMenuBarVisible" (click)="showSideMenu()">
+      <img src="./assets/menu.png" alt="menu-icon">
+    </div>
+
+    <div class="side-menu" id="side-menu">
+      <div class="close-icon">
+        <img src="./assets/close.png" alt="close-icon" (click)="closeSideMenu()">
+      </div>
+      <ul>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="toIntro()">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toResume()">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toContact()">Contact</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="center-page" id="center-page">
+      <div class="location" id="location">
+        <div class="rectangle">
+          <p>Located in Bengaluru</p>
+          <div class="globe">
+            <iframe
+              src="https://giphy.com/embed/usoe2XTnnQqmHfIleu"
+              width="100%"
+              height="100%"
+              style="position: relative"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <div class="job" id="job">
+        <h1>Web & <br />Software Developer</h1>
+      </div>
+    </div>
+    <div class="name-running" id="name-running">
+      <span>Aman Bansiwal — &nbsp;</span>
+      <span>Aman Bansiwal — &nbsp;</span>
+      <span>Aman Bansiwal — &nbsp;</span>
+    </div>
+  </section>
+
+  <section class="section-intro" id="intro">
+    <div class="container">
+      <div class="row" id="intro-row1">
+        <div [appIntersectionObserver]="'slide-up'" class="hidden-su col-lg-9 col-md-8" id="intro-para">
+          <p>
+            "Welcome to my digital portfolio – a curated collection of my
+            journey in the world of software engineering and development. I am
+            passionate about crafting elegant and impactful solutions that merge
+            innovation with practicality. With a foundation built upon 2 years
+            of hands-on experience in Full Stack development, specializing in
+            Angular, .Net, and web applications, I have honed my skills in
+            creating robust, user-centric software. This space unveils my
+            growth, presenting projects that illustrate my problem-solving
+            approach and commitment to excellence. Join me in exploring the
+            boundless possibilities of software engineering."
+          </p>
+        </div>
+        <div [appIntersectionObserver]="'scale-in'" class="hidden-si col-lg-3 col-md-4" id="intro-image">
+          <img
+            src="./assets/intro.jpg"
+            class="rounded-circle img-fluid"
+            id="intro-image-attach"
+          />
+        </div>
+      </div>
+      <div [appIntersectionObserver]="'scale-in'" class="hidden-si row" id="intro-row2">
+        <div class="col-lg-12" id="intro-tag">
+          <p>
+            "Turning Code into Creativity: Exploring the Artistry of Software
+            Engineering"
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-resume" id="resume">
+    <div class="container">
+      <div [appIntersectionObserver]="'scale-in'" class="hidden-si row" id="res-row1">
+        <div class="col-lg-3 col-md-4" id="resume-file">
+          <div class="res-hover" (click)="openInNewTab()">
+            <div class="image-outline">
+              <img src="./assets/resume.png" class="img-fluid" id="res-img" />
+            </div>
+            <span> View Resume !! </span>
+          </div>
+        </div>
+        <div [appIntersectionObserver]="'slide-up'" class="hidden-su col-lg-9 col-md-8" id="resume-intro">
+          <p>
+            Welcome to the resume section, where you can access a comprehensive
+            snapshot of my professional journey. This document outlines my
+            educational background, hands-on experience, technical
+            proficiencies, and accomplishments in the field of software
+            engineering. It provides a concise yet detailed overview of my
+            skills and achievements, showcasing how I've evolved as a developer
+            and contributor to the industry. I invite you to review and download
+            my resume to gain insights into my qualifications and potential
+            contributions to your projects or collaborations.
+          </p>
+        </div>
+      </div>
+      <div [appIntersectionObserver]="'scale-in'" class="hidden-si row" id="res-row2">
+        <div class="col-lg-12" id="res-tag">
+          <p>"Unlocking My Journey: Explore My Professional Resume"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-contact" id="contact">
+    <div class="container">
+      <div class="conc-row1">
+        <div [appIntersectionObserver]="'scale-in'" class="hidden-si col-lg-10" id="contact-intro">
+          <p>Let's work together</p>
+          <div class="col-lg-2"></div>
+        </div>
+        </div>
+        <div class="conc-row2">
+          <div class="col-lg-12">
+            <hr /> 
+          </div>
+        </div>
+        <div class="conc-row3">
+          <div [appIntersectionObserver]="'fade'" class="hidden-fd flex-col">
+            <a href="mailto:aman.bansiwal@gmail.com" class="pill-btn">aman.bansiwal@gmail.com</a>
+            <a href="tel:+91-9414944929" class="pill-btn">+91-9414944929</a>
+            <a href="https://www.linkedin.com/in/aman-bansiwal/" class="pill-btn">lnkd.in/aman-bansiwal</a>
+          </div>
+        </div>
+      </div>
+
+      <footer class="d-flex flex-wrap justify-content-between align-items-center p-3 mt-2 border-top">
+        <div class="col-md-4 d-flex align-items-center">
+          <a class="mb-3 me-2 mb-md-0 text-decoration-none lh-1">@ab- Aman Bansiwal</a>
+        </div>
+          <span class="mb-3 mb-md-0">2022 © Edition</span>
+        </footer>
+  </section>
+</div>
